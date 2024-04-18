@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+
+<h2>Agregar Usuario</h2>
+
+<form th:object="${userApp}" th:action="@{/save}" method="post">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" th:field="*{name}" /><br/>
+
+    <label for="lastname">Apellido:</label>
+    <input type="text" id="lastname" th:field="*{lastname}" /><br/>
+
+    <label for="age">Edad:</label>
+    <input type="text" id="age" th:field="*{age}" /><br/>
+
+
+    <div class="g-recaptcha" data-sitekey="6LfCvr4pAAAAAPYvbMulwDuEAQpuL_Y73z4yGb_k"></div>
+
+    <button type="submit">Guardar</button>
+
+    <a type="submit" th:href="@{/}" >Cancelar</a>
+</form>
+
+<script th:src="@{https://www.google.com/recaptcha/api.js}" async defer></script>
+
+</body>
+</html>
